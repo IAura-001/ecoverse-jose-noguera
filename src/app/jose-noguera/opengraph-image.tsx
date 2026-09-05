@@ -29,46 +29,28 @@ export default function OpenGraphImage() {
           width: "1200px",
           height: "630px",
           display: "flex",
-          position: "relative",
-          overflow: "hidden",
-          color: "#ffffff",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "70px",
           background:
-            "radial-gradient(circle at 20% 10%, #261637 0%, #0d0e13 48%, #050607 100%)",
-          fontFamily: "Arial, Helvetica, sans-serif",
+            "linear-gradient(135deg, #0d0d12 0%, #17101f 55%, #0b0b0f 100%)",
+          color: "white",
+          fontFamily: "Arial, sans-serif",
         }}
       >
         <div
           style={{
-            position: "absolute",
-            right: "-100px",
-            top: "-150px",
-            width: "650px",
-            height: "650px",
-            display: "flex",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(112,62,230,.34), rgba(75,40,150,.12) 45%, transparent 72%)",
-          }}
-        />
-
-        <div
-          style={{
-            width: "58%",
-            height: "100%",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
-            paddingLeft: "72px",
-            paddingRight: "40px",
+            width: "58%",
           }}
         >
           <div
             style={{
-              display: "flex",
-              marginBottom: "30px",
-              color: "#c3aad8",
-              fontSize: "19px",
-              letterSpacing: "6px",
+              fontSize: "24px",
+              letterSpacing: "5px",
+              color: "#b99ad8",
+              marginBottom: "28px",
             }}
           >
             ECOVERSE
@@ -76,12 +58,10 @@ export default function OpenGraphImage() {
 
           <div
             style={{
-              display: "flex",
-              marginBottom: "20px",
-              fontSize: "70px",
+              fontSize: "72px",
               fontWeight: 700,
-              letterSpacing: "-4px",
               lineHeight: 1,
+              marginBottom: "20px",
             }}
           >
             José Noguera
@@ -89,11 +69,8 @@ export default function OpenGraphImage() {
 
           <div
             style={{
-              display: "flex",
-              color: "#c99aff",
-              fontSize: "27px",
-              letterSpacing: "2px",
-              lineHeight: 1.2,
+              fontSize: "28px",
+              color: "#c9a0ff",
             }}
           >
             Regional Manager en ECOVERSE
@@ -102,47 +79,26 @@ export default function OpenGraphImage() {
 
         <div
           style={{
-            position: "absolute",
-            right: "64px",
-            top: "48px",
-            width: "390px",
-            height: "534px",
+            width: "360px",
+            height: "480px",
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
             overflow: "hidden",
-            border: "1px solid rgba(255,255,255,.18)",
-            borderRadius: "32px",
-            background: "#11131a",
+            borderRadius: "28px",
+            border: "1px solid rgba(255,255,255,.15)",
           }}
         >
           <img
             src={portraitUrl}
             alt=""
-            width="390"
-            height="534"
+            width="360"
+            height="480"
             style={{
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              objectPosition: "center",
             }}
           />
         </div>
-
-        <div
-          style={{
-            position: "absolute",
-            right: "68px",
-            bottom: "35px",
-            left: "68px",
-            height: "4px",
-            display: "flex",
-            borderRadius: "999px",
-            background:
-              "linear-gradient(90deg,#b32fed,#345de6 46%,#0eb9aa 76%,#20ca6c)",
-          }}
-        />
       </div>
     ),
     size
