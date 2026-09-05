@@ -3,34 +3,40 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 const productionUrl =
-  process.env.NEXT_PUBLIC_CARD_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
+  "https://ecoverse-jose-noguera.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(productionUrl),
+
   title: "José Noguera | ECOVERSE",
-  description: "Regional Manager en ECOVERSE",
+
+  description:
+    "Regional Manager en ECOVERSE",
+
   applicationName: "ECOVERSE Card",
+
   openGraph: {
     title: "José Noguera | ECOVERSE",
-    description: "Regional Manager en ECOVERSE",
+    description:
+      "Regional Manager en ECOVERSE",
     type: "profile",
+
     images: [
       {
-        url: "/og.jpg",
+        url: "/og-final.png",
         width: 1200,
         height: 630,
         alt: "José Noguera — Regional Manager en ECOVERSE",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "José Noguera | ECOVERSE",
-    description: "Regional Manager en ECOVERSE",
-    images: ["/og.jpg"],
+    description:
+      "Regional Manager en ECOVERSE",
+    images: ["/og-final.png"],
   },
 };
 
