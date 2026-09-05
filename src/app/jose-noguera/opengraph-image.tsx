@@ -1,9 +1,8 @@
 import { ImageResponse } from "next/og";
 import { joseContact } from "@/config/jose-noguera";
 
-export const runtime = "edge";
-
-export const alt = "José Noguera | Regional Manager | ECOVERSE";
+export const alt =
+  "José Noguera | Regional Manager en ECOVERSE";
 
 export const size = {
   width: 1200,
@@ -14,11 +13,9 @@ export const contentType = "image/png";
 
 export default function OpenGraphImage() {
   const baseUrl =
-    process.env.NEXT_PUBLIC_JOSE_CARD_URL ||
-    process.env.NEXT_PUBLIC_CARD_URL ||
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : "http://localhost:3000");
+      : "http://localhost:3000";
 
   const portraitUrl = new URL(
     joseContact.portrait,
@@ -34,41 +31,26 @@ export default function OpenGraphImage() {
           display: "flex",
           position: "relative",
           overflow: "hidden",
-          background:
-            "radial-gradient(circle at 20% 15%, #24152f 0%, #0b0c11 45%, #050607 100%)",
           color: "#ffffff",
+          background:
+            "radial-gradient(circle at 20% 10%, #261637 0%, #0d0e13 48%, #050607 100%)",
           fontFamily: "Arial, Helvetica, sans-serif",
         }}
       >
-        {/* Glow */}
         <div
           style={{
             position: "absolute",
-            width: "620px",
-            height: "620px",
-            right: "-160px",
-            top: "-140px",
+            right: "-100px",
+            top: "-150px",
+            width: "650px",
+            height: "650px",
+            display: "flex",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(89,61,226,0.32) 0%, rgba(137,42,213,0.14) 38%, rgba(0,0,0,0) 70%)",
+              "radial-gradient(circle, rgba(112,62,230,.34), rgba(75,40,150,.12) 45%, transparent 72%)",
           }}
         />
 
-        {/* Accent line */}
-        <div
-          style={{
-            position: "absolute",
-            left: "68px",
-            right: "68px",
-            bottom: "42px",
-            height: "5px",
-            borderRadius: "999px",
-            background:
-              "linear-gradient(90deg,#b32fed,#345de6 46%,#0eb9aa 76%,#20ca6c)",
-          }}
-        />
-
-        {/* Left content */}
         <div
           style={{
             width: "58%",
@@ -83,11 +65,10 @@ export default function OpenGraphImage() {
           <div
             style={{
               display: "flex",
-              fontSize: "20px",
+              marginBottom: "30px",
+              color: "#c3aad8",
+              fontSize: "19px",
               letterSpacing: "6px",
-              color: "#bca6d1",
-              textTransform: "uppercase",
-              marginBottom: "28px",
             }}
           >
             ECOVERSE
@@ -96,11 +77,11 @@ export default function OpenGraphImage() {
           <div
             style={{
               display: "flex",
-              fontSize: "72px",
-              lineHeight: 1,
+              marginBottom: "20px",
+              fontSize: "70px",
               fontWeight: 700,
               letterSpacing: "-4px",
-              marginBottom: "20px",
+              lineHeight: 1,
             }}
           >
             José Noguera
@@ -109,35 +90,20 @@ export default function OpenGraphImage() {
           <div
             style={{
               display: "flex",
-              fontSize: "26px",
+              color: "#c99aff",
+              fontSize: "27px",
+              letterSpacing: "2px",
               lineHeight: 1.2,
-              color: "#c89cff",
-              letterSpacing: "4px",
-              textTransform: "uppercase",
-              marginBottom: "28px",
             }}
           >
-            Regional Manager
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              maxWidth: "520px",
-              fontSize: "24px",
-              lineHeight: 1.45,
-              color: "#c9c3cf",
-            }}
-          >
-            Tarjeta digital · Perfil profesional · Experiencias ECOVERSE
+            Regional Manager en ECOVERSE
           </div>
         </div>
 
-        {/* Portrait */}
         <div
           style={{
             position: "absolute",
-            right: "58px",
+            right: "64px",
             top: "48px",
             width: "390px",
             height: "534px",
@@ -145,10 +111,9 @@ export default function OpenGraphImage() {
             alignItems: "center",
             justifyContent: "center",
             overflow: "hidden",
-            borderRadius: "34px",
-            border: "1px solid rgba(255,255,255,0.18)",
+            border: "1px solid rgba(255,255,255,.18)",
+            borderRadius: "32px",
             background: "#11131a",
-            boxShadow: "0 30px 80px rgba(0,0,0,0.45)",
           }}
         >
           <img
@@ -164,10 +129,22 @@ export default function OpenGraphImage() {
             }}
           />
         </div>
+
+        <div
+          style={{
+            position: "absolute",
+            right: "68px",
+            bottom: "35px",
+            left: "68px",
+            height: "4px",
+            display: "flex",
+            borderRadius: "999px",
+            background:
+              "linear-gradient(90deg,#b32fed,#345de6 46%,#0eb9aa 76%,#20ca6c)",
+          }}
+        />
       </div>
     ),
-    {
-      ...size,
-    }
+    size
   );
 }
