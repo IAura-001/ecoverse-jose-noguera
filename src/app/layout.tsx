@@ -1,26 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import type { ReactNode } from "react";
 import "./globals.css";
 
-const productionUrl =
-  "https://ecoverse-jose-noguera.vercel.app";
+const productionUrl = process.env.NEXT_PUBLIC_CARD_URL
+  ?? (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
 
 export const metadata: Metadata = {
   metadataBase: new URL(productionUrl),
-
   title: "José Noguera | ECOVERSE",
-
-  description:
-    "Regional Manager en ECOVERSE",
-
+  description: "Regional Manager en ECOVERSE",
   applicationName: "ECOVERSE Card",
-
   openGraph: {
     title: "José Noguera | ECOVERSE",
-    description:
-      "Regional Manager en ECOVERSE",
+    description: "Regional Manager en ECOVERSE",
     type: "profile",
-
     images: [
       {
         url: "/og-final.jpg",
@@ -30,12 +24,10 @@ export const metadata: Metadata = {
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
     title: "José Noguera | ECOVERSE",
-    description:
-      "Regional Manager en ECOVERSE",
+    description: "Regional Manager en ECOVERSE",
     images: ["/og-final.jpg"],
   },
 };
@@ -47,14 +39,6 @@ export const viewport: Viewport = {
   colorScheme: "dark light",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
-  return (
-    <html lang="es">
-      <body>{children}</body>
-    </html>
-  );
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return <html lang="es"><body>{children}</body></html>;
 }
