@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/og-final.png",
+        url: "/og-final.jpg",
         width: 1200,
         height: 630,
         alt: "José Noguera — Regional Manager en ECOVERSE",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "José Noguera | ECOVERSE",
     description:
       "Regional Manager en ECOVERSE",
-    images: ["/og-final.png"],
+    images: ["/og-final.jpg"],
   },
 };
 
